@@ -65,16 +65,47 @@ let deck = [
     "queen_of_spades",
 ]
 let pile = [];
-function genCard() {
-    const cardIdx = Math.floor(Math.random()*deck.length);
 
-    let card = deck[cardIdx];
+const userHand = document.getElementById("player-hand");
+
+const playerPointsEl = document.getElementById("player-points");
+
+const hitButton = document.getElementById("hit");
 
 
-    console.log(card);
-    return 0;
+function getCard() {
+
+    const card = deck[Math.floor(Math.random()*deck.length)];
+    deck = deck.filter(item => item != card);
+    pile.push(card);
+
+    return card;
 }
 
-genCard();
-genCard();
-genCard();
+function hit() {
+    const card = getCard();
+    const cardName = card.split("_")[0];
+    let cardVal = 0;
+
+    if (["king", "queen", "jack"].includes(cardName)) {
+        cardVal = 10;
+    } else if (cardName == "ace") {
+        cardVal = 11;
+    } else {
+        cardVal = cardName;
+    }
+
+    const cardElement = document.createElement("img");
+
+    cardElement.setAttribute("src", "cards/" + card + ".svg");
+    cardElement.setAttribute("alt", card);
+    cardElement.className = "card";
+
+    let points = playerPointsEl.value;
+    console.log(points);
+    playerPointsEl.innerText = parseInt(points) + parseInt(cardVal);
+
+    userHand.appendChild(cardElement);
+}
+
+hitButton.addEventListener("click", () => hit());

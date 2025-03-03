@@ -8,8 +8,18 @@
 </head>
 <body class="rubik-normal">
     <h1 class="rubik-bold title">BlackjackJS</h1>
-    <div class="croupier-hand"></div>
-    <div class="user-hand"></div>
+    <div class="croupier-hand hand" id="croupier-hand">
+        <img src="cards/10_of_spades.svg" alt="" class="card">
+    </div>
+    <h2 class="points-info-title" id="croupier-info">Croupier : <span id="croupier-points" class="croupier-points points">10</span></h2>
+    <h2 class="points-info-title" id="player-info">Player : <span id="player-points" class="player-points points">4</span></h2>
+    <div class="player-hand hand" id="player-hand">
+        <img src="cards/4_of_hearts.svg" alt="" class="card">
+    </div>
+    <div class="player-buttons rubik-bold">
+        <div class="button" id="stand">STAND</div>
+        <div class="button" id="hit">HIT</div>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>

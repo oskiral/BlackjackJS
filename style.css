@@ -30,3 +30,32 @@ h1.title {
     margin-block: 30px;
     pad: 10px;
 }
+h2.points-info-title {
+    margin-block: 10px;
+    padding: 5px 10px;
+}
+.hand {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.card {
+    height: 250px;
+}
+#player-info {
+    margin-top: 50px;
+}
+.player-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    gap: 20px;
+}
+.button {
+    padding: 20px 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
